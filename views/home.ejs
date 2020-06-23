@@ -1,0 +1,38 @@
+<%- include('partials/main') %>
+<div class="searchWeather">
+  <form onsubmit="IsEmpty()" method="post" name="form" id="myform">
+    <h1>Weather App</h1>
+    <div class="form-group input-container">
+      <input
+        class="form-control form-control-lg"
+        type="text"
+        name="city"
+        id="city"
+        
+        required
+        oninvalid="this.setCustomValidity('Enter City of your Choice.')"
+        oninput="this.setCustomValidity('')"
+        autocomplete="off"
+      />
+      <label>City:</label>
+    </div>
+    <br />
+    <input
+      class="btn btn-success btn-lg"
+      id="btn"
+      type="submit"
+      value="Check Weather"
+      onclick="return IsEmpty();"
+    />
+  </form>
+  <footer>
+    <p class="footer">&copy; Bibek Adhikari</p>
+  </footer>
+</div>
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>

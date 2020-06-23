@@ -1,0 +1,59 @@
+<%- include('partials/weather') %>
+
+<!--If user enters wrong name or city doesn't exists in database go 
+  to error page else display temp of every 3 hours-->
+<% if (weatherData.list) { %>
+  <h1><%=weatherData.city.name%></h1>
+<% for(var i = 0; i<weatherData.list.length; i++) { %>
+  
+<div class="card" style="width: 22rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%=weatherData.list[i].dt_txt%></h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <img
+        src="http://openweathermap.org/img/wn/<%=weatherData.list[0].weather[0].icon %>@2x.png"
+        alt=""
+        srcset=""
+      />
+    </h6>
+    <br>
+    <p class="card-text">
+      Temp:<%=weatherData.list[i].main.temp%>°C
+    </p>
+    <p class="card-text">
+      Humidity:<%=weatherData.list[i].main.humidity%>%
+    </p>
+    <p class="card-text">
+      Weather Description: <%=
+      weatherData.list[i].weather[0].description%>
+    </p>
+    <p class="card-text">
+      Wind-Speed: <%=weatherData.list[i].wind.speed%>
+    </p>
+  </div>
+</div>
+<%} %>
+<%} else {%>
+    <div class="container">
+      <h1>Please Enter Correct City Name.</h1>
+      <form method="get" action="/">
+          <button  class="btn btn-success btn-lg" type="submit">Return</button>
+      </form>
+    </div>
+   
+    <% } %>
+    <div class="container">
+      <form method="get" action="/">
+        <button  class="btn btn-success btn-lg" type="submit">Check Another City</button>
+      </form>
+    </div>
+   
+    <footer>
+      <p class="footer">&copy; Bibek Adhikari</p>
+    </footer>
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>

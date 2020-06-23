@@ -1,0 +1,37 @@
+.card,
+.card-body,
+.card-text,
+.card-title,
+h6,
+img {
+    display: inline-block;
+    margin-left: 2rem;
+    background-color: cadetblue;
+}
+
+.card {
+    height: 350px;
+}
+
+h1 {
+    text-align: center;
+    color: cadetblue;
+}
+
+* {
+    background-color: #8FBC8F;
+}
+
+.btn {
+    border-radius: 30px;
+}
+
+.container {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 4rem;
+    color: cadetblue;
+}
