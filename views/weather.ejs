@@ -42,12 +42,13 @@
     </div>
    
     <% } %>
+    <%if(weatherData.list){ %>
     <div class="container">
       <form method="get" action="/">
         <button  class="btn btn-success btn-lg" type="submit">Check Another City</button>
       </form>
     </div>
-   
+   <% }%>
     <footer>
       <p class="footer">&copy; Bibek Adhikari</p>
     </footer>
