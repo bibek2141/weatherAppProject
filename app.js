@@ -1,11 +1,9 @@
 const path = require("path");
 const express = require("express");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-//Load config
-dotenv.config({ path: "./config/config.env" });
 
 const app = express();
 
@@ -13,7 +11,7 @@ const app = express();
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-
+console.log(process.env.APP_ID);
 app.set("view engine", "ejs");
 
 //Static folder
