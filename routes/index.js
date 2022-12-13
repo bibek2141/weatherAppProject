@@ -25,7 +25,6 @@ router.post("/", (req, res) => {
     "&cnt=7&appid=" +
     process.env.APP_ID +
     "&units=metric";
-  console.log(url);
   https.get(url, function (response) {
     response.on("data", function (data) {
       const weatherData = JSON.parse(data);
